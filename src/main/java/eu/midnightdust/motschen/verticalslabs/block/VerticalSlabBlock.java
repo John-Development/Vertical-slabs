@@ -59,12 +59,11 @@ public class VerticalSlabBlock extends HorizontalFacingBlock implements Waterlog
   }
 
   public boolean canPathfindThrough(BlockState state, BlockView world, BlockPos pos, NavigationType type) {
-    switch (type) {
-      case WATER:
-        return world.getFluidState(pos).isIn(FluidTags.WATER);
-      default:
-        return false;
+    if (Objects.requireNonNull(type) == NavigationType.WATER) {
+      return world.getFluidState(pos).isIn(FluidTags.WATER);
     }
+
+    return false;
   }
 
   @Override
@@ -114,15 +113,15 @@ public class VerticalSlabBlock extends HorizontalFacingBlock implements Waterlog
 
     if (verticalSlabType != VerticalSlabType.DOUBLE && itemStack.isOf(this.asItem())) {
       if (context.canReplaceExisting()) {
-        boolean bl = context.getHitPos().y - (double)context.getBlockPos().getY() > 0.5; // true si pincha mas arriba false si pincha mas abajo
-        boolean blSouth = context.getHitPos().z - (double)context.getBlockPos().getZ() > 0.5; // true si pincha mas sur false si pincha mas norte
-        boolean blEast = context.getHitPos().x - (double)context.getBlockPos().getX() > 0.5; // true si pincha mas este false si pincha mas oeste
+        boolean blSouth = context.getHitPos().z - (double)context.getBlockPos().getZ() > 0.5;
+        boolean blEast = context.getHitPos().x - (double)context.getBlockPos().getX() > 0.5;
         Direction direction = context.getSide();
+
         return switch (facing) {
-          case NORTH -> direction == Direction.SOUTH || blSouth && direction.getAxis().isHorizontal();
-          case SOUTH -> direction == Direction.NORTH || !blSouth && direction.getAxis().isHorizontal();
-          case EAST -> direction == Direction.WEST || blEast && direction.getAxis().isHorizontal();
-          case WEST -> direction == Direction.EAST || !blEast && direction.getAxis().isHorizontal();
+          case NORTH -> direction == Direction.NORTH || !blSouth && direction.getAxis().isHorizontal();
+          case SOUTH -> direction == Direction.SOUTH || blSouth && direction.getAxis().isHorizontal();
+          case EAST -> direction == Direction.EAST || blEast && direction.getAxis().isHorizontal();
+          case WEST -> direction == Direction.WEST || !blEast && direction.getAxis().isHorizontal();
           default -> false;
         };
       } else {
