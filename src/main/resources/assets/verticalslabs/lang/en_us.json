@@ -1,5 +1,4 @@
 {
-    "itemGroup.verticalslabs.vertical_slabs":"Vertical Slabs",
 	"block.verticalslabs.vertical_oak_slab":"Vertical Oak Slab",
 	"block.verticalslabs.vertical_spruce_slab":"Vertical Spruce Slab",
 	"block.verticalslabs.vertical_birch_slab":"Vertical Birch Slab",
@@ -38,5 +37,22 @@
 	"block.verticalslabs.vertical_diorite_slab":"Vertical Diorite Slab",
 	"block.verticalslabs.vertical_blackstone_slab":"Vertical Blackstone Slab",
 	"block.verticalslabs.vertical_polished_blackstone_slab":"Vertical Polished Blackstone Slab",
-	"block.verticalslabs.vertical_polished_blackstone_brick_slab":"Vertical Polished Blackstone Brick Slab"
+	"block.verticalslabs.vertical_polished_blackstone_brick_slab":"Vertical Polished Blackstone Brick Slab",
+  "block.verticalslabs.vertical_cobbled_deepslate_slab":"Vertical Cobbled Deepslate Slab",
+  "block.verticalslabs.vertical_polished_deepslate_slab":"Vertical Polished Deepslate Slab",
+  "block.verticalslabs.vertical_deepslate_brick_slab":"Vertical Deepslate Brick Slab",
+  "block.verticalslabs.vertical_deepslate_tile_slab":"Vertical Deepslate Tile Slab",
+  "block.verticalslabs.vertical_cut_copper_slab":"Vertical Cut Copper Slab",
+  "block.verticalslabs.vertical_exposed_cut_copper_slab":"Vertical Exposed Cut Copper Slab",
+  "block.verticalslabs.vertical_weathered_cut_copper_slab":"Vertical Weathered Cut Copper Slab",
+  "block.verticalslabs.vertical_oxidized_cut_copper_slab":"Vertical Oxidised Cut Copper Slab",
+  "block.verticalslabs.vertical_waxed_cut_copper_slab":"Vertical Waxed Cut Copper Slab",
+  "block.verticalslabs.vertical_waxed_exposed_cut_copper_slab":"Vertical Waxed Exposed Cut Copper Slab",
+  "block.verticalslabs.vertical_waxed_weathered_cut_copper_slab":"Vertical Waxed Weathered Cut Copper Slab",
+  "block.verticalslabs.vertical_waxed_oxidized_cut_copper_slab":"Vertical Waxed Oxidised Cut Copper Slab",
+  "block.verticalslabs.vertical_mangrove_slab":"Vertical Mangrove Slab",
+  "block.verticalslabs.vertical_cherry_slab":"Vertical Cherry Slab",
+  "block.verticalslabs.vertical_bamboo_slab":"Vertical Bamboo Slab",
+  "block.verticalslabs.vertical_bamboo_mosaic_slab":"Vertical Bamboo Mosaic Slab",
+  "block.verticalslabs.vertical_mud_brick_slab":"Vertical Mud Brick Slab"
 }

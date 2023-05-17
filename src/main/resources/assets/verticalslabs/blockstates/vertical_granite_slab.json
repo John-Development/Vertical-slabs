@@ -1,8 +1,8 @@
 {
     "variants": {
-        "facing=north": { "model": "block/granite_slab", "x": 90, "uvlock": true },
-		"facing=east": { "model": "block/granite_slab", "x": 90, "y": 90, "uvlock": true },
-		"facing=south": { "model": "block/granite_slab", "x": 90, "y": 180, "uvlock": true },
-		"facing=west": { "model": "block/granite_slab", "x": 90, "y": 270, "uvlock": true }
+      "facing=north": { "model": "verticalslabs:block/vertical_granite_slab", "uvlock": true },
+      "facing=east": { "model": "verticalslabs:block/vertical_granite_slab", "y": 90, "uvlock": true },
+      "facing=south": { "model": "verticalslabs:block/vertical_granite_slab", "y": 180, "uvlock": true },
+      "facing=west": { "model": "verticalslabs:block/vertical_granite_slab", "y": 270, "uvlock": true }
     }
 }

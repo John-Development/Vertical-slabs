@@ -1,5 +1,5 @@
 {
-  "parent": "verticalslabs:block/vertical_slab",
+  "parent": "verticalslabs:block/vertical_slab_bottom_top",
   "textures": {
     "bottom": "minecraft:block/sandstone_bottom",
     "top": "minecraft:block/sandstone_top",
