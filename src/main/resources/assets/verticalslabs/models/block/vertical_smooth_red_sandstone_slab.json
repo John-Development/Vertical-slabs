@@ -1,8 +1,6 @@
 {
-  "parent": "verticalslabs:block/vertical_slab_bottom_top",
+  "parent": "verticalslabs:block/vertical_slab_all",
   "textures": {
-    "bottom": "minecraft:block/red_sandstone_bottom",
-    "top": "minecraft:block/red_sandstone_top",
-    "side": "minecraft:block/red_sandstone"
+    "all": "minecraft:block/red_sandstone_top"
   }
 }
