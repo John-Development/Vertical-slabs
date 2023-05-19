@@ -1,9 +1,12 @@
 {
   "variants": {
-    "facing=north,type=half": { "model": "verticalslabs:block/vertical_smooth_stone_slab", "uvlock": true },
-    "facing=east,type=half": { "model": "verticalslabs:block/vertical_smooth_stone_slab", "y": 90, "uvlock": true },
-    "facing=south,type=half": { "model": "verticalslabs:block/vertical_smooth_stone_slab", "y": 180, "uvlock": true },
-    "facing=west,type=half": { "model": "verticalslabs:block/vertical_smooth_stone_slab", "y": 270, "uvlock": true },
-    "type=double": { "model": "minecraft:block/smooth_stone" }
+    "facing=north,type=half": { "model": "verticalslabs:block/vertical_smooth_stone_slab", "uvlock": false },
+    "facing=east,type=half": { "model": "verticalslabs:block/vertical_smooth_stone_slab", "y": 90, "uvlock": false },
+    "facing=south,type=half": { "model": "verticalslabs:block/vertical_smooth_stone_slab", "y": 180, "uvlock": false },
+    "facing=west,type=half": { "model": "verticalslabs:block/vertical_smooth_stone_slab", "y": 270, "uvlock": false },
+    "facing=north,type=double": { "model": "minecraft:block/smooth_stone_slab_double", "x": 90 },
+    "facing=east,type=double": { "model": "minecraft:block/smooth_stone_slab_double", "x": 90, "y": 90 },
+    "facing=south,type=double": { "model": "minecraft:block/smooth_stone_slab_double", "x": 270 },
+    "facing=west,type=double": { "model": "minecraft:block/smooth_stone_slab_double", "x": 270, "y": 90 }
   }
 }

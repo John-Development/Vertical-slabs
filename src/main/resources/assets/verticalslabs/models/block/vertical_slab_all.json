@@ -1,6 +1,6 @@
 {
   "parent": "verticalslabs:block/vertical_slab",
-	"textures": {
+  "textures": {
     "particle": "#all",
     "down": "#all",
     "up": "#all",
@@ -8,5 +8,5 @@
     "east": "#all",
     "south": "#all",
     "west": "#all"
-	}
+  }
 }
