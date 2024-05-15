@@ -1,8 +1,11 @@
 package eu.midnightdust.motschen.verticalslabs.block;
 
+import com.mojang.serialization.MapCodec;
 import eu.midnightdust.motschen.verticalslabs.block.enums.VerticalSlabType;
 import net.minecraft.block.*;
+import net.minecraft.block.enums.SlabType;
 import net.minecraft.entity.ai.pathing.NavigationType;
+import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.fluid.Fluid;
 import net.minecraft.fluid.FluidState;
 import net.minecraft.fluid.Fluids;
@@ -19,12 +22,13 @@ import net.minecraft.util.shape.VoxelShape;
 import net.minecraft.util.shape.VoxelShapes;
 import net.minecraft.world.BlockView;
 import net.minecraft.world.WorldAccess;
+import org.jetbrains.annotations.Nullable;
 
-import javax.annotation.Nullable;
 import java.util.Objects;
 
 
 public class VerticalSlabBlock extends HorizontalFacingBlock implements Waterloggable {
+  public static final MapCodec<VerticalSlabBlock> CODEC = createCodec(VerticalSlabBlock::new);
   public static final BooleanProperty WATERLOGGED;
   public static final EnumProperty<VerticalSlabType> TYPE;
   private static final VoxelShape NORTH_SHAPE;
@@ -38,16 +42,17 @@ public class VerticalSlabBlock extends HorizontalFacingBlock implements Waterlog
   }
 
   @Override
+  protected MapCodec<? extends HorizontalFacingBlock> getCodec() {
+    return CODEC;
+  }
+
+  @Override
   public FluidState getFluidState(BlockState blockState) {
     return blockState.get(WATERLOGGED) ? Fluids.WATER.getStill(false) : super.getFluidState(blockState);
   }
 
   public boolean tryFillWithFluid(WorldAccess world, BlockPos pos, BlockState state, FluidState fluidState) {
     return Waterloggable.super.tryFillWithFluid(world, pos, state, fluidState);
-  }
-
-  public boolean canFillWithFluid(BlockView world, BlockPos pos, BlockState state, Fluid fluid) {
-    return Waterloggable.super.canFillWithFluid(world, pos, state, fluid);
   }
 
   public BlockState getStateForNeighborUpdate(BlockState state, Direction direction, BlockState neighborState, WorldAccess world, BlockPos pos, BlockPos neighborPos) {
@@ -77,8 +82,14 @@ public class VerticalSlabBlock extends HorizontalFacingBlock implements Waterlog
   }
 
   @Override
+  public boolean hasSidedTransparency(BlockState state) {
+    return state.get(TYPE) != VerticalSlabType.DOUBLE;
+  }
+
+
+  @Override
   public VoxelShape getOutlineShape(BlockState state, BlockView view, BlockPos pos, ShapeContext context) {
-    if (state.get(TYPE) == VerticalSlabType.DOUBLE) {
+    if (!hasSidedTransparency(state)) {
       return VoxelShapes.fullCube();
     }
 
@@ -108,10 +119,9 @@ public class VerticalSlabBlock extends HorizontalFacingBlock implements Waterlog
 
   public boolean canReplace(BlockState state, ItemPlacementContext context) {
     ItemStack itemStack = context.getStack();
-    VerticalSlabType verticalSlabType = state.get(TYPE);
     Direction facing = state.get(FACING);
 
-    if (verticalSlabType != VerticalSlabType.DOUBLE && itemStack.isOf(this.asItem())) {
+    if (hasSidedTransparency(state) && itemStack.isOf(this.asItem())) {
       if (context.canReplaceExisting()) {
         boolean blSouth = context.getHitPos().z - (double)context.getBlockPos().getZ() > 0.5;
         boolean blEast = context.getHitPos().x - (double)context.getBlockPos().getX() > 0.5;
@@ -135,9 +145,9 @@ public class VerticalSlabBlock extends HorizontalFacingBlock implements Waterlog
   static {
     WATERLOGGED = Properties.WATERLOGGED;
     TYPE = EnumProperty.of("type", VerticalSlabType.class);
-    NORTH_SHAPE = createCuboidShape(0, 0, 8, 16, 16, 16);
-    EAST_SHAPE = createCuboidShape(0, 0, 0, 8, 16, 16);
-    SOUTH_SHAPE = createCuboidShape(0, 0, 0, 16, 16, 8);
-    WEST_SHAPE = createCuboidShape(8, 0, 0, 16, 16, 16);
+    NORTH_SHAPE = Block.createCuboidShape(0.0, 0.0, 8.0, 16.0, 16.0, 16.0);
+    EAST_SHAPE = Block.createCuboidShape(0.0, 0.0, 0.0, 8.0, 16.0, 16.0);
+    SOUTH_SHAPE = Block.createCuboidShape(0.0, 0.0, 0.0, 16.0, 16.0, 8.0);
+    WEST_SHAPE = Block.createCuboidShape(8.0, 0.0, 0.0, 16.0, 16.0, 16.0);
   }
 }

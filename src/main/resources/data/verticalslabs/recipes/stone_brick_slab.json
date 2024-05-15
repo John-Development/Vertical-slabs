@@ -6,6 +6,6 @@
         }
     ],
     "result": {
-        "item": "minecraft:stone_brick_slab"
+        "id": "minecraft:stone_brick_slab"
     }
 }

@@ -1,7 +1,6 @@
 package eu.midnightdust.motschen.verticalslabs;
 
 import net.fabricmc.api.ModInitializer;
-import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
 import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
 import net.fabricmc.fabric.api.registry.OxidizableBlocksRegistry;
 import net.minecraft.block.Block;
@@ -82,7 +81,7 @@ public class VerticalSlabs implements ModInitializer {
 
   private void registerBlockItem(String path, Block block) {
     Registry.register(Registries.BLOCK, new Identifier(MOD_ID, path), block);
-    Registry.register(Registries.ITEM, new Identifier(MOD_ID, path), new BlockItem(block, new FabricItemSettings()));
+    Registry.register(Registries.ITEM, new Identifier(MOD_ID, path), new BlockItem(block, new Item.Settings()));
   }
 
   private void initOxidizableChains() {

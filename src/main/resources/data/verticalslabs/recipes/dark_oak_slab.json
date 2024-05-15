@@ -6,6 +6,6 @@
         }
     ],
     "result": {
-        "item": "minecraft:dark_oak_slab"
+        "id": "minecraft:dark_oak_slab"
     }
 }

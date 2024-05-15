@@ -6,6 +6,6 @@
         }
     ],
     "result": {
-        "item": "minecraft:cut_sandstone_slab"
+        "id": "minecraft:cut_sandstone_slab"
     }
 }
