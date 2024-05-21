@@ -1,4 +1,4 @@
-package eu.midnightdust.motschen.verticalslabs.block.enums;
+package net.verticalslabs.block.enums;
 
 import net.minecraft.util.StringIdentifiable;
 

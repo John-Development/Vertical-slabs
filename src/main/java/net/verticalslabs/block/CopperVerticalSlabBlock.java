@@ -1,4 +1,4 @@
-package eu.midnightdust.motschen.verticalslabs.block;
+package net.verticalslabs.block;
 
 import net.minecraft.block.*;
 import net.minecraft.server.world.ServerWorld;
@@ -6,9 +6,9 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.random.Random;
 
 public class CopperVerticalSlabBlock extends VerticalSlabBlock implements Oxidizable {
-  private final Oxidizable.OxidationLevel oxidationLevel;
+  private final OxidationLevel oxidationLevel;
 
-  public CopperVerticalSlabBlock(Oxidizable.OxidationLevel oxidationLevel, Settings settings) {
+  public CopperVerticalSlabBlock(OxidationLevel oxidationLevel, Settings settings) {
     super(settings);
     this.oxidationLevel = oxidationLevel;
   }

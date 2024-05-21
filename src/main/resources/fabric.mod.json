@@ -1,36 +1,33 @@
 {
-  "schemaVersion": 1,
-  "id": "verticalslabs",
-  "version": "${version}",
-
-  "name": "Vertical Slabs",
-  "description": "Adds vertical slabs to the game!",
-  "authors": [
-    "Motschen",
-    "TeamMidnightDust"
-  ],
-  "contact": {
-    "homepage": "https://www.midnightdust.eu/",
-    "issues": "https://github.com/TeamMidnightDust/verticalslabs/issues"
-  },
-
-  "license": "MIT",
-  "icon": "assets/verticalslabs/icon.png",
-
-  "environment": "*",
-  "entrypoints": {
-    "main": [
-      "eu.midnightdust.motschen.verticalslabs.VerticalSlabs"
-    ]
-  },
-
-  "depends": {
-    "fabricloader": ">=0.14.7",
-    "fabric": "*",
-    "minecraft": ">=1.20.5",
-    "java": ">=21"
-  },
-  "suggests": {
-    "flamingo": "*"
-  }
+	"schemaVersion": 1,
+	"id": "vertical-slabs",
+	"version": "${version}",
+	"name": "Vertical slabs",
+	"description": "This is an example description! Tell everyone what your mod is about!",
+	"authors": [
+		"John-Development"
+	],
+	"contact": {
+		"homepage": "https://fabricmc.net/",
+		"sources": "https://github.com/FabricMC/fabric-example-mod"
+	},
+	"license": "CC0-1.0",
+	"icon": "assets/verticalslabs/icon.png",
+	"environment": "*",
+	"entrypoints": {
+		"main": [
+			"net.verticalslabs.VerticalSlabs"
+		],
+		"client": []
+	},
+	"mixins": [],
+	"depends": {
+		"fabricloader": ">=0.15.11",
+		"minecraft": "~1.20.6",
+		"java": ">=21",
+		"fabric-api": "*"
+	},
+	"suggests": {
+		"another-mod": "*"
+	}
 }

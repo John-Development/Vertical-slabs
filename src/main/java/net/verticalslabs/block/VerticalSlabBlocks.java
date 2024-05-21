@@ -1,4 +1,4 @@
-package eu.midnightdust.motschen.verticalslabs.block;
+package net.verticalslabs.block;
 
 import net.minecraft.block.AbstractBlock;
 import net.minecraft.block.Block;
